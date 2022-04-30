@@ -1,5 +1,6 @@
 .calculator {
-  width: 35vh;
+  width: 65vw;
+
   margin: 0 auto;
   background-color: #161616;
 
@@ -8,10 +9,9 @@
 }
 
 .display {
-  width: auto;
-  height: 10vh;
+  height: 15vh;
   background-color: #666751 !important;
-  font: normal 4rem serif;
+  font: normal 3rem serif;
   color: #f2f2f2;
 }
 
@@ -22,4 +22,70 @@
 
 .calculator-buttons th:hover {
   background-color: #33393f !important;
+}
+
+@media (min-width:480px) {
+  .calculator {
+    width: 45vw;
+  }
+
+  .display {
+    height: 10vh;
+  }
+}
+
+@media (min-width:600px) {
+  .calculator {
+    width: 40vw;
+  }
+
+  .display {
+    height: 15vh;
+
+  }
+}
+
+@media (min-width:801px) { 
+  .calculator {
+    width: 35vw;
+  }
+
+  .display {
+    height: 13vh;
+
+  }
+}
+
+@media (min-width:1025px) { 
+  .calculator {
+    width: 25vw;
+  }
+
+  .display {
+    height: 13vh;
+
+  }
+}
+
+
+@media (min-width:1281px) {
+  .calculator {
+    width: 25vw;
+  }
+
+  .display {
+    height: 13vh;
+
+  }
+}
+
+@media (min-width:1600px) {
+  .calculator {
+    width: 15vw;
+  }
+
+  .display {
+    height: 8vh;
+
+  }
 }
