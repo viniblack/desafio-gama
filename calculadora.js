@@ -8,6 +8,7 @@ const operadores = document.querySelectorAll('[id*=operador]');
 let novoNumero = true;
 let operador;
 let numeroAnterior;
+let historioCalculo = [];
 
 const operacaoPentente = () => operador !== undefined
 
@@ -17,8 +18,17 @@ const calcular = () => {
     novoNumero = true;
     const resultado = eval(`${numeroAnterior}${operador}${numeroAtual}`);
     atualizarDisplay(resultado);
+    historioCalculo.push(`${numeroAnterior} ${operador} ${numeroAtual} = ${resultado}`);
+    historico();
   }
 }
+
+let historico = () => {
+  historioCalculo.forEach(() => {
+    document.getElementById("historico").textContent = historioCalculo
+  })
+}
+
 
 const atualizarDisplay = (texto) => {
   if (novoNumero) {

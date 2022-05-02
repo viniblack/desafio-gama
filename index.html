@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>calculadora</title>
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -17,51 +18,76 @@
 </head>
 
 <body class="bg-light">
-  <main class="container d-flex justify-content-center align-items-center flex-column" style="height: 100vh">
-    <h1>Calculadora</h1>
-    <div class="calculator p-2 row">
-      <table class="table table-borderless m-0">
-        <thead class="">
-          <tr>
-            <th colspan="4" class="display text-end" id="display"></th>
-          </tr>
-        </thead>
-        <tbody class="calculator-buttons text-center">
-          <tr class=" ">
-            <th class="border-0 bg-dark fs-3" id="limparDisplay">CE</th>
-            <th class="border-0 bg-dark fs-3" id="limparCalculo">C</th>
-            <th class="border-0 bg-dark fs-3" id="backspace">«</th>
-            <th class="border-0 bg-dark fs-3" id="operadorDividir">/</th>
-          </tr>
-          <tr class="">
-            <th class="border-0 bg-dark fs-3" id="tecla7">7</th>
-            <th class="border-0 bg-dark fs-3" id="tecla8">8</th>
-            <th class="border-0 bg-dark fs-3" id="tecla9">9</th>
-            <th class="border-0 bg-dark fs-3" id="operadorMultiplicar">*</th>
-          </tr>
-          <tr class="">
-            <th class="border-0 bg-dark fs-3" id="tecla4">4</th>
-            <th class="border-0 bg-dark fs-3" id="tecla5">5</th>
-            <th class="border-0 bg-dark fs-3" id="tecla6">6</th>
-            <th class="border-0 bg-dark fs-3" id="operadorSubtrair">-</th>
-          </tr>
-          <tr class="">
-            <th class="border-0 bg-dark fs-3" id="tecla1">1</th>
-            <th class="border-0 bg-dark fs-3" id="tecla2">2</th>
-            <th class="border-0 bg-dark fs-3" id="tecla3">3</th>
-            <th class="border-0 bg-dark fs-3" id="operadorAdicionar">+</th>
-          </tr>
-          <tr class="">
-            <th class="border-0 bg-dark fs-3" id="inverter">±</th>
-            <th class="border-0 bg-dark fs-3" id="tecla0">0</th>
-            <th class="border-0 bg-dark fs-3" id="decimal">,</th>
-            <th class="border-0 bg-dark fs-3" id="igual">=</th>
-          </tr>
-        </tbody>
-      </table>
+  <header class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 d-flex justify-content-around">
+        <h1 class="text-center">Calculadora</h1>
+      </div>
+      <div class="col-6 text-end py-4">
+        <button type="button" class="btn btn-dark" id="como-usar" data-bs-toggle="modal" data-bs-target="#comoUsarModal">
+          Como usar?
+        </button>
+        <div class="modal fade" id="comoUsarModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2>Calculadora</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="text-start">
+                  Você pode usaros botões da calculadora ou usar o seu teclado para fazer os calculos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 py-4">
+        <div id="historico">
+          Historico
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="d-flex justify-content-center">
+    <div class="calculator p-3 rounded">
+      <div class="display-calculator text-white text-end mb-4 p-3 rounded overflow-hidden" id="display"></div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-around">
+          <button class="text-white p-3 my-1 rounded" id="limparDisplay">CE</button>
+          <button class="text-white p-3 my-1 rounded" id="limparCalculo">C</button>
+          <button class="text-white p-3 my-1 rounded" id="backspace">«</button>
+          <button class="text-white p-3 my-1 rounded" id="operadorDividir">/</button>
+        </div>
+        <div class="col-12 d-flex justify-content-around">
+          <button class="text-white p-3 my-1 rounded" id="tecla7">7</button>
+          <button class="text-white p-3 my-1 rounded" id="tecla8">8</button>
+          <button class="text-white p-3 my-1 rounded" id="tecla9">9</button>
+          <button class="text-white p-3 my-1 rounded" id="operadorMultiplicar">*</button>
+        </div>
+        <div class="col-12 d-flex justify-content-around">
+          <button class="text-white p-3 my-1 rounded" id="tecla4">4</button>
+          <button class="text-white p-3 my-1 rounded" id="tecla5">5</button>
+          <button class="text-white p-3 my-1 rounded" id="tecla6">6</button>
+          <button class="text-white p-3 my-1 rounded" id="operadorSubtrair">-</button>
+        </div>
+        <div class="col-12 d-flex justify-content-around">
+          <button class="text-white p-3 my-1 rounded" id="tecla1">1</button>
+          <button class="text-white p-3 my-1 rounded" id="tecla2">2</button>
+          <button class="text-white p-3 my-1 rounded" id="tecla3">3</button>
+          <button class="text-white p-3 my-1 rounded" id="operadorAdicionar">+</button>
+        </div>
+        <div class="col-12 d-flex justify-content-around">
+          <button class="text-white p-3 my-1 rounded" id="inverter">±</button>
+          <button class="text-white p-3 my-1 rounded" id="tecla0">0</button>
+          <button class="text-white p-3 my-1 rounded" id="decimal">,</button>
+          <button class="text-white p-3 my-1 rounded" id="igual">=</button>
+        </div>
+      </div>
     </div>
   </main>
-  <script src="calculadora.js"></script>
 </body>
 
 </html>
