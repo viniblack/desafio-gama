@@ -18,26 +18,30 @@
 </head>
 
 <body class="bg-light">
-  <header class="container">
+  <header class="container my-5">
     <div class="row d-flex justify-content-center">
       <div class="col-12 d-flex justify-content-around">
         <h1 class="text-center">Calculadora</h1>
       </div>
       <div class="col-6 text-end py-4">
-        <button type="button" class="btn btn-dark" id="como-usar" data-bs-toggle="modal" data-bs-target="#comoUsarModal">
+        <button type="button" class="btn btn-dark" id="como-usar" data-bs-toggle="modal"
+          data-bs-target="#comoUsarModal">
           Como usar?
         </button>
-        <div class="modal fade" id="comoUsarModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
+
+        <div class="modal fade" id="comoUsarModal" tabindex="-1" aria-labelledby="comoUsar" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h2>Calculadora</h2>
+                <h2 class="modal-title">Como usar</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <p class="text-start">
-                  Você pode usaros botões da calculadora ou usar o seu teclado para fazer os calculos.
+                  Você pode usaros botões da calculadora ou usar o seu teclado para fazer os cálculos.
+                </p>
+                <p class="text-start">
+                  Clicando no botão "histórico" você consegue ver o histórico de cálculo 
                 </p>
               </div>
             </div>
@@ -45,13 +49,27 @@
         </div>
       </div>
       <div class="col-6 py-4">
-        <div id="historico">
-          Historico
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#historicoModal">
+          Histórico
+        </button>
+
+        <div class="modal fade" id="historicoModal" tabindex="-1" aria-labelledby="historico" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title">Histórico</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <ul id="historico">
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   </header>
-  <main class="d-flex justify-content-center">
+  <main class="container d-flex justify-content-center mt-5">
     <div class="calculator p-3 rounded">
       <div class="display-calculator text-white text-end mb-4 p-3 rounded overflow-hidden" id="display"></div>
       <div class="row">

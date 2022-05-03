@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-button:hover {
+.calculator  button:hover {
   background-color: #494e5c;
 }
 

@@ -24,12 +24,8 @@ const calcular = () => {
 }
 
 let historico = () => {
-  historioCalculo.forEach(() => {
-    document.getElementById("historico").textContent = historioCalculo
-  })
+  document.getElementById("historico").innerHTML += `<li>${historioCalculo[historioCalculo.length - 1]};</li>`;
 }
-
-
 const atualizarDisplay = (texto) => {
   if (novoNumero) {
     display.textContent = texto.toLocaleString('pt-BR');
