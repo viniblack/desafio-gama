@@ -23,6 +23,12 @@
   background-color: #494e5c;
 }
 
+
+
+footer img {
+  width: 2rem;
+}
+
 @media (min-width:600px) {
   .calculator {
     width: 50vw;

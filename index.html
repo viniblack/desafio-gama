@@ -13,99 +13,127 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
 
+  <!-- Meus arquivos -->
   <link rel="stylesheet" href="style.css">
   <script defer src="./calculadora.js"></script>
+
 </head>
 
 <body class="bg-light">
-  <header class="container my-5">
-    <div class="row d-flex justify-content-center">
-      <div class="col-12 d-flex justify-content-around">
-        <h1 class="text-center">Calculadora</h1>
-      </div>
-      <div class="col-6 text-end py-4">
-        <button type="button" class="btn btn-dark" id="como-usar" data-bs-toggle="modal"
-          data-bs-target="#comoUsarModal">
-          Como usar?
-        </button>
+  <div class="container">
+    <header class=" my-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 d-flex justify-content-around">
+          <h1 class="text-center">Calculadora</h1>
+        </div>
+        <div class="col-6 text-end py-4">
+          <button type="button" class="btn btn-dark" id="como-usar" data-bs-toggle="modal"
+            data-bs-target="#comoUsarModal">
+            Como usar?
+          </button>
 
-        <div class="modal fade" id="comoUsarModal" tabindex="-1" aria-labelledby="comoUsar" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title">Como usar</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p class="text-start">
-                  Você pode usaros botões da calculadora ou usar o seu teclado para fazer os cálculos.
-                </p>
-                <p class="text-start">
-                  Clicando no botão "histórico" você consegue ver o histórico de cálculo 
-                </p>
+          <div class="modal fade" id="comoUsarModal" tabindex="-1" aria-labelledby="comoUsar" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title">Como usar</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-start">
+                    Você pode usaros botões da calculadora ou usar o seu teclado para fazer os cálculos.
+                  </p>
+                  <p class="text-start">
+                    Clicando no botão "histórico" você consegue ver o histórico de cálculo
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-6 py-4">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#historicoModal">
-          Histórico
-        </button>
+        <div class="col-6 py-4">
+          <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#historicoModal">
+            Histórico
+          </button>
 
-        <div class="modal fade" id="historicoModal" tabindex="-1" aria-labelledby="historico" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title">Histórico</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul id="historico">
-                </ul>
+          <div class="modal fade" id="historicoModal" tabindex="-1" aria-labelledby="historico" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title">Histórico</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <ul id="historico">
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
+    </header>
+
+    <main class="container d-flex justify-content-center mt-5">
+      <div class="calculator p-3 rounded">
+        <div class="display-calculator text-white text-end mb-4 p-3 rounded overflow-hidden" id="display"></div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-around">
+            <button class="text-white p-3 my-1 rounded" id="limparDisplay">CE</button>
+            <button class="text-white p-3 my-1 rounded" id="limparCalculo">C</button>
+            <button class="text-white p-3 my-1 rounded" id="backspace">«</button>
+            <button class="text-white p-3 my-1 rounded" id="operadorDividir">/</button>
+          </div>
+          <div class="col-12 d-flex justify-content-around">
+            <button class="text-white p-3 my-1 rounded" id="tecla7">7</button>
+            <button class="text-white p-3 my-1 rounded" id="tecla8">8</button>
+            <button class="text-white p-3 my-1 rounded" id="tecla9">9</button>
+            <button class="text-white p-3 my-1 rounded" id="operadorMultiplicar">*</button>
+          </div>
+          <div class="col-12 d-flex justify-content-around">
+            <button class="text-white p-3 my-1 rounded" id="tecla4">4</button>
+            <button class="text-white p-3 my-1 rounded" id="tecla5">5</button>
+            <button class="text-white p-3 my-1 rounded" id="tecla6">6</button>
+            <button class="text-white p-3 my-1 rounded" id="operadorSubtrair">-</button>
+          </div>
+          <div class="col-12 d-flex justify-content-around">
+            <button class="text-white p-3 my-1 rounded" id="tecla1">1</button>
+            <button class="text-white p-3 my-1 rounded" id="tecla2">2</button>
+            <button class="text-white p-3 my-1 rounded" id="tecla3">3</button>
+            <button class="text-white p-3 my-1 rounded" id="operadorAdicionar">+</button>
+          </div>
+          <div class="col-12 d-flex justify-content-around">
+            <button class="text-white p-3 my-1 rounded" id="inverter">±</button>
+            <button class="text-white p-3 my-1 rounded" id="tecla0">0</button>
+            <button class="text-white p-3 my-1 rounded" id="decimal">,</button>
+            <button class="text-white p-3 my-1 rounded" id="igual">=</button>
+          </div>
+        </div>
       </div>
-  </header>
-  <main class="container d-flex justify-content-center mt-5">
-    <div class="calculator p-3 rounded">
-      <div class="display-calculator text-white text-end mb-4 p-3 rounded overflow-hidden" id="display"></div>
-      <div class="row">
-        <div class="col-12 d-flex justify-content-around">
-          <button class="text-white p-3 my-1 rounded" id="limparDisplay">CE</button>
-          <button class="text-white p-3 my-1 rounded" id="limparCalculo">C</button>
-          <button class="text-white p-3 my-1 rounded" id="backspace">«</button>
-          <button class="text-white p-3 my-1 rounded" id="operadorDividir">/</button>
-        </div>
-        <div class="col-12 d-flex justify-content-around">
-          <button class="text-white p-3 my-1 rounded" id="tecla7">7</button>
-          <button class="text-white p-3 my-1 rounded" id="tecla8">8</button>
-          <button class="text-white p-3 my-1 rounded" id="tecla9">9</button>
-          <button class="text-white p-3 my-1 rounded" id="operadorMultiplicar">*</button>
-        </div>
-        <div class="col-12 d-flex justify-content-around">
-          <button class="text-white p-3 my-1 rounded" id="tecla4">4</button>
-          <button class="text-white p-3 my-1 rounded" id="tecla5">5</button>
-          <button class="text-white p-3 my-1 rounded" id="tecla6">6</button>
-          <button class="text-white p-3 my-1 rounded" id="operadorSubtrair">-</button>
-        </div>
-        <div class="col-12 d-flex justify-content-around">
-          <button class="text-white p-3 my-1 rounded" id="tecla1">1</button>
-          <button class="text-white p-3 my-1 rounded" id="tecla2">2</button>
-          <button class="text-white p-3 my-1 rounded" id="tecla3">3</button>
-          <button class="text-white p-3 my-1 rounded" id="operadorAdicionar">+</button>
-        </div>
-        <div class="col-12 d-flex justify-content-around">
-          <button class="text-white p-3 my-1 rounded" id="inverter">±</button>
-          <button class="text-white p-3 my-1 rounded" id="tecla0">0</button>
-          <button class="text-white p-3 my-1 rounded" id="decimal">,</button>
-          <button class="text-white p-3 my-1 rounded" id="igual">=</button>
-        </div>
+    </main>
+
+    <footer class="position-relative d-flex flex-wrap justify-content-around align-items-center py-3 my-4">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="text-muted">Desenvolvidor por Vini Black</span>
       </div>
-    </div>
-  </main>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3">
+          <a target="_blank" href="https://github.com/viniblack/">
+            <img src="./img/github.png" alt="">
+          </a>
+        </li>
+        <li class="ms-3">
+          <a target="_blank" href="https://www.linkedin.com/in/viniblack/">
+            <img src="./img/linkedin.png" alt="">
+          </a>
+        </li>
+        <li class="ms-3">
+          <a target="_blank" href="https://twitter.com/BlackVinii">
+            <img src="./img/twitter.png" alt="">
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </div>
 </body>
 
 </html>
